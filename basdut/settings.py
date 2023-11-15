@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'shuttle_reserve',
+    'login_logout',
 ]
 
 MIDDLEWARE = [
