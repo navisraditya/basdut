@@ -22,4 +22,6 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('shuttle/', include('shuttle_reserve.urls')),
     path('login_logout/', include('login_logout.urls')),
+    path('fasilitas_hotel/', include('fasilitas_hotel.urls')),
+    path('membuat_komplain/', include('membuat_komplain.urls')),
 ]

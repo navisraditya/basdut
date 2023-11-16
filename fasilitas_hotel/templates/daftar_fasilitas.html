@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasilitas Hotel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        #addFacilityModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            z-index: 1;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>FASILITAS HOTEL</h1>
+    </header>
+
+    <nav>
+        <button onclick="openAddFacilityModal()">Tambah Fasilitas Hotel</button>
+    </nav>
+
+    <div id="addFacilityModal">
+        <h2>Tambah Fasilitas Hotel</h2>
+        <!-- Form untuk menambah fasilitas hotel bisa ditambahkan di sini -->
+        <button onclick="addFacilityToTable(); closeAddFacilityModal();">Tambah</button>
+        <button onclick="closeAddFacilityModal()">Batal</button>
+    </div>
+
+    <section>
+        <h2>Daftar Fasilitas Hotel</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nomor</th>
+                    <th>Nama</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="facilityTableBody">
+                <!-- Fasilitas Kolam Renang -->
+                <tr>
+                    <td>1</td>
+                    <td>Kolam Renang</td>
+                    <td>
+                        <button onclick="openEditFacilityModal(1)">Ubah</button>
+                        <button onclick="deleteFacility(1)">Hapus</button>
+                    </td>
+                </tr>
+                <!-- Fasilitas Restoran -->
+                <tr>
+                    <td>2</td>
+                    <td>Restoran</td>
+                    <td>
+                        <button onclick="openEditFacilityModal(2)">Ubah</button>
+                        <button onclick="deleteFacility(2)">Hapus</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        function openAddFacilityModal() {
+            document.getElementById('addFacilityModal').style.display = 'block';
+        }
+
+        function closeAddFacilityModal() {
+            document.getElementById('addFacilityModal').style.display = 'none';
+        }
+
+        function addFacilityToTable() {
+            // Mendapatkan referensi ke tbody tabel
+            var tbody = document.getElementById('facilityTableBody');
+
+            // Membuat elemen <tr> untuk fasilitas baru
+            var newRow = document.createElement('tr');
+
+            // Mengisi data fasilitas baru
+            newRow.innerHTML = `
+                <td>${tbody.childElementCount + 1}</td>
+                <td>Restoran</td>
+                <td>
+                    <button onclick="openEditFacilityModal(${tbody.childElementCount + 1})">Ubah</button>
+                    <button onclick="deleteFacility(${tbody.childElementCount + 1})">Hapus</button>
+                </td>
+            `;
+
+            // Menambahkan baris baru ke dalam tabel
+            tbody.appendChild(newRow);
+
+            // Menampilkan pesan "Belum ada fasilitas." jika sebelumnya tidak ada fasilitas
+            if (tbody.childElementCount === 1 && tbody.children[0].querySelector('td').colSpan === 3) {
+                tbody.innerHTML = '';
+            }
+        }
+
+        // Panggil fungsi ini untuk menambahkan fasilitas "Kolam Renang" ke dalam tabel
+        // addFacilityToTable();
+    </script>
+
+</body>
+</html>

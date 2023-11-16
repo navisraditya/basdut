@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'dashboard',
     'shuttle_reserve',
     'login_logout',
+    'fasilitas_hotel',
+    'membuat_komplain',
 ]
 
 MIDDLEWARE = [

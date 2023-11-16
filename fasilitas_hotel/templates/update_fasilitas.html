@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasilitas Hotel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>UPDATE FASILITAS HOTEL</h1>
+    </header>
+
+    <form onsubmit="updateFacility(event)">
+        <label for="facilityName">Nama Fasilitas:</label>
+        <input type="text" id="facilityName" required>
+        <button type="submit">Update</button>
+        <a href="daftar_fasilitas.html"><button type="button">Kembali</button></a>
+    </form>
+
+    <script>
+        function updateFacility(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir (reload halaman)
+
+            // Logika untuk mengupdate fasilitas (misalnya: mengirim permintaan ke server)
+
+            // Setelah berhasil mengupdate fasilitas, kembali ke halaman daftar fasilitas
+            window.location.href = 'daftar_fasilitas.html';
+        }
+    </script>
+
+</body>
+</html>
