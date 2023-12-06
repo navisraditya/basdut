@@ -21,4 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
     path('shuttle/', include('shuttle_reserve.urls')),
+    path('login/', include('login_logout.urls')),
+    path('daftar_reservasi/', include('daftar_reservasi.urls')),
+    path('kamar_hotel/', include('kamar_hotel.urls')),
+    path('reservasi/', include('reservasi.urls')),
+
 ]

@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'shuttle_reserve',
+    'login_logout',
+    'daftar_reservasi',
+    'kamar_hotel',
+    'reservasi',
 ]
 
 MIDDLEWARE = [
@@ -77,9 +81,17 @@ WSGI_APPLICATION = 'basdut.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'ENGINE': 'django.db.backends.postgresql',        
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'dbkelompok1',
+        'HOST': 'db.bcopynrphwssudrnkhuu.supabase.co',
+        'PORT': '5432',
+        # 'OPTIONS': {
+        #     'options': '-c search_path=postgres,SISTEL'
+        # }
+    },
 }
 
 
