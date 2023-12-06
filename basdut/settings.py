@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashboard',
+    'shuttle_reserve',
+    'login_logout',
 ]
 
 MIDDLEWARE = [

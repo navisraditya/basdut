@@ -21,5 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
     path('shuttle/', include('shuttle_reserve.urls')),
-    path('login_logout/', include('login_logout.urls')),
 ]
